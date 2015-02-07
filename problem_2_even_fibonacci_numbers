@@ -1,0 +1,16 @@
+a, b = 0, 1 #Initialize variables a, b, total
+total = 0
+print "\nPlease enter the maximum value for Fibonacci Sequence"
+print "Note:- Maximum value cannot exceed 4,000,000"
+value = input("\nMaximum value: ") #Take user input
+print "\nFibonacci sequence: "
+if value <= 4000000: #Check if user input exceeds maximum value
+	while b < value:
+ 		print b, #Fibonacci number
+  		a, b = b, a+b
+   		if b % 2 == 0: #Checks if Fibonacci number is even
+    			total += b
+
+	print "\n\nSum of even valued terms is: ", total, "\n"
+else:
+	print "\nMaximum value exceeded 4,000,000\n"
