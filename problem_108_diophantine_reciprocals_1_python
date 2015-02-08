@@ -19,4 +19,4 @@ while True:
 
 t1 = time.time() #End timer
 t2 = t1 - t0
-print t2 #Time taken to execute
+print "Time taken to execute is" ,t2, "seconds\n" #Time taken to execute
