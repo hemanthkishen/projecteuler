@@ -1,0 +1,22 @@
+import time
+
+t0 = time.time() #Start timer
+
+num = 2 * 3 * 5 * 7 * 11 * 13 #Product of 6 primes
+
+while True:
+	sq = num * num
+	count = 2
+	for i in range(2, num): #Check for divisors
+		if sq % i == 0:
+			count += 1
+		
+	
+	if count > 1000: #Check id distinct solutions exceed 1000
+		print "The least value of n is", num, "for which the number of distinct solutions exceeds one-thousand which is", count
+		break
+	num += 2 * 3 * 5 * 7 * 11 * 13
+
+t1 = time.time() #End timer
+t2 = t1 - t0
+print t2 #Time taken to execute
