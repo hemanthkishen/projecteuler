@@ -9,7 +9,7 @@ while b < 4000000:
 	print b, #Fibonacci number
 	a, b = b, a+b
 	if b % 2 == 0: #Checks if Fibonacci number is even
-   			total += b
+   		total += b
 
 print "\n\nSum of even valued terms is: ", total, "\n"
 
