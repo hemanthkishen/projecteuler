@@ -29,7 +29,7 @@ while True:
 			count += 1
 		
 	
-	if count > 1000: #Check id distinct solutions exceed 1000
+	if count > 1000: #Check if distinct solutions exceed 1000
 		print "\nThe least value of n is", num, "for which the number of distinct solutions exceeds one-thousand, which is", count
 		break
 	num += 2 * 3 * 5 * 7 * 11 * 13
