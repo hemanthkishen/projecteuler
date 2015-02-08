@@ -1,22 +1,39 @@
+#KeyZero Conversation approach
+
+#1/x + 1/y = 1/n
+#using algebra, we solve for y in terms of x and n
+# y = nx/(x-n)
+# let d = (x-n)
+# y = nx/d
+# x = d+n
+# y = n(d+n) / d
+# y = (nd + n^2)/d
+# y = n + n^2/d
+# so for y to be integer, we need to find divisors d of n^2
+# then backsubstitute
+# x, y (with the constraints that n < x <= 2n)
+
+# The number of solutions for num is (divisors(n^2)+1)/2
+
 import time
 
 t0 = time.time() #Start timer
 
-num = 2 * 3 * 5 * 7 * 11 * 13 #Product of 6 primes
+num = 1 * 2 * 3 * 5 * 7 * 11 * 13 #Product of 7 primes
 
 while True:
 	sq = num * num
-	count = 2
-	for i in range(2, num): #Check for divisors
+	count = 1
+	for i in range(1, num): #Check for divisors
 		if sq % i == 0:
 			count += 1
 		
 	
 	if count > 1000: #Check id distinct solutions exceed 1000
-		print "The least value of n is", num, "for which the number of distinct solutions exceeds one-thousand which is", count
+		print "\nThe least value of n is", num, "for which the number of distinct solutions exceeds one-thousand, which is", count
 		break
 	num += 2 * 3 * 5 * 7 * 11 * 13
 
 t1 = time.time() #End timer
 t2 = t1 - t0
-print "Time taken to execute is" ,t2, "seconds\n" #Time taken to execute
+print "\nTime taken to execute is" ,t2, "seconds\n" #Time taken to execute
