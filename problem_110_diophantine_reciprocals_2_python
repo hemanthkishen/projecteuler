@@ -1,0 +1,42 @@
+import time
+
+t0 = time.time() #Start timer
+
+primes = [43,41,37,31,29,23,19,17,13,11,7,5,3,2] #List of 14 prime numbers in reverse order
+n = 13 #Assuming the answer is in the range of power of 13
+x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14] #List of 14 powers
+
+def f(n,x):
+    if n==-1: #Will check if n = -1 to continue till it crosses 4,000,000
+        count = 1
+        for i in range(0, 14):
+            count = count * (2 * x[i] + 1)
+        count = (count + 1) / 2
+        if (count > 4000000): #Checks if it crosses 4,000,000
+            ret = 1
+            for i in range(0, 14):
+                ret = ret * (pow(primes[i], x[i])) #Takes prime numbers 
+            return ret
+        else:
+            return -1
+    
+    maxvalue = 9999999999999999 #Minimum maxvalue needed
+    maxpow = 5 #Locally defined variables
+    
+    if n < 13:
+        maxpow = min(x[n+1:]) #Chooses a smaller value of n, if lesser is needed
+
+    for i in range(0, maxpow + 1):
+        x[n] = i
+        temp = f(n-1,x)
+        if temp > 0:
+            if temp < maxvalue:
+                maxvalue = temp
+    return maxvalue
+    #Returns the least value of n for which the number of distinct solutions exceeds four million at the end of the loop
+
+print "\nThe least value of n is", f(n, x), "for which the number of distinct solutions exceeds four million"
+
+t1 = time.time() #End timer
+t2 = t1 - t0
+print "\nTime taken to execute is" ,t2, "seconds\n" #Time taken to execute
