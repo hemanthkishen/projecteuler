@@ -1,3 +1,7 @@
+import time
+
+t0 = time.time() #Start timer
+
 a, b = 0, 1 #Initialize variables a, b, total
 total = 0
 print "\nPlease enter the maximum value for Fibonacci Sequence"
@@ -14,3 +18,7 @@ if value <= 4000000: #Check if user input exceeds maximum value
 	print "\n\nSum of even valued terms is: ", total, "\n"
 else:
 	print "\nMaximum value exceeded 4,000,000\n"
+
+t1 = time.time() #End timer
+t2 = t1 - t0
+print "Time taken to execute is" ,t2, "seconds\n" #Time taken to execute
