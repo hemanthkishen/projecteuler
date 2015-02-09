@@ -1,3 +1,6 @@
+# Project Euler - Problem 108 - Diophantine reciprocals I
+# What is the least value of n for which the number of distinct solutions exceeds one-thousand?
+
 #1/x + 1/y = 1/n
 #using algebra, we solve for y in terms of x and n
 # y = nx/(x-n)
