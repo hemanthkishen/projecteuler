@@ -1,3 +1,11 @@
+# Initialize variables a, b, total
+# First number a = 0
+# First number b = 1
+# Second number b = 1
+# Third number b = 2
+# And so on adds the previous Fibonacci number till 4,000,000
+# Checks is Fibonacci number is even by takinf modulus and adds to the total
+
 import time
 
 t0 = time.time() #Start timer
