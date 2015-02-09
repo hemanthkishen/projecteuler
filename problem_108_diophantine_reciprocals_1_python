@@ -20,18 +20,18 @@ t0 = time.time() #Start timer
 num = 1 * 2 * 3 * 5 * 7 * 11 * 13 #Product of 7 primes
 
 while True:
-	sq = num * num
+	sq = num * num #Take square of num
 	count = 1
 	for i in range(1, num): #Check for divisors
-		if sq % i == 0:
-			count += 1
+		if sq % i == 0: #Check if dvisible
+			count += 1 #Increment counter if divisible
 		
 	
 	if count > 1000: #Check if distinct solutions exceed 1000
 		print "\nThe least value of n is", num, "for which the number of distinct solutions exceeds one-thousand, which is", count
 		break
-	num += 2 * 3 * 5 * 7 * 11 * 13
+	num += 2 * 3 * 5 * 7 * 11 * 13 #Increase by adding the product of 7 primes
 
 t1 = time.time() #End timer
-t2 = t1 - t0
+t2 = t1 - t0 #Time elapsed
 print "\nTime taken to execute is" ,t2, "seconds\n" #Time taken to execute
