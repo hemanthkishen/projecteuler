@@ -1,3 +1,6 @@
+# Project Euler - Problem 110 - Diophantine reciprocals II
+# What is the least value of n for which the number of distinct solutions exceeds four million?
+
 #1/x + 1/y = 1/n
 #using algebra, we solve for y in terms of x and n
 # y = nx/(x-n)
@@ -41,17 +44,17 @@ def f(n,x):
     if n < 13:
         maxpow = min(x[n+1:]) #Chooses a smaller value of n, if lesser is needed
 
-    for i in range(0, maxpow + 1):
+    for i in range(0, maxpow + 1): #Calculates for the maxpow for smaller value of n 
         x[n] = i
-        temp = f(n-1,x)
+        temp = f(n-1,x) #Transfers the possible output to temp
         if temp > 0:
-            if temp < maxvalue:
-                maxvalue = temp
+            if temp < maxvalue: #Checks if temp is less than the Minimum maxvalue needed
+                maxvalue = temp #Replaces maxvalue with temp
     return maxvalue
     #Returns the least value of n for which the number of distinct solutions exceeds four million at the end of the loop
 
 print "\nThe least value of n is", f(n, x), "for which the number of distinct solutions exceeds four million"
 
 t1 = time.time() #End timer
-t2 = t1 - t0
+t2 = t1 - t0 #Time elapsed
 print "\nTime taken to execute is" ,t2, "seconds\n" #Time taken to execute
